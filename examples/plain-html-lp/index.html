@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Landing Page</title>
+
+  <!-- Your normal SEO/Analytics tags here -->
+  <meta name="description" content="Example landing page protected with Claude Code Security Kit">
+
+  <!-- Pixel Meta would go here in a real project -->
+  <!-- <script>...</script> -->
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Example Landing Page</h1>
+    <p>This is a demo landing page protected by Claude Code Security Kit.</p>
+
+    <p>After running <code>protect-build.mjs</code>, this HTML will have:</p>
+    <ul>
+      <li>Invisible meta tags with author UUID</li>
+      <li>JS file with watermark</li>
+      <li>CSS file with comment header</li>
+      <li>SHA-256 manifest in <code>protection-manifest.json</code></li>
+      <li><code>.ots</code> blockchain proof in the kit's <code>timestamps/</code> folder</li>
+    </ul>
+
+    <button id="cta">Call to Action</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

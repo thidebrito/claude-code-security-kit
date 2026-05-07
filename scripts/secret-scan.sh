@@ -44,7 +44,7 @@ if [ ! -d "$REPO_PATH/.git" ]; then
   exit 0
 fi
 
-cd "$REPO_PATH"
+cd "$REPO_PATH" || exit 1
 
 EXIT_CODE=0
 JSON_FLAG=""

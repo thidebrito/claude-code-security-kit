@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "applied_at": "2026-05-07T01:30:00Z",
+  "applied_by": "thidebrito",
+  "level": "B",
+  "templates_used": [
+    "self-hosted (this is the source repo)"
+  ],
+  "git_hooks_installed": ["pre-commit (recommended via apply-template if cloned)"],
+  "audit_report": null,
+  "security_repo_version": "1.0.0",
+  "notes": "This is the public source repo of claude-code-security-kit itself. Marker is symbolic — the repo is the system."
+}

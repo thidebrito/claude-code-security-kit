@@ -1,0 +1,13 @@
+# CODEOWNERS — auto-assigns reviewers for Pull Requests
+# Format: <pattern> <user-or-team>
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything
+* @thidebrito
+
+# Specific areas
+/scripts/ @thidebrito
+/claude-code-bundle/ @thidebrito
+/templates/ @thidebrito
+/docs/ @thidebrito
+/.github/ @thidebrito

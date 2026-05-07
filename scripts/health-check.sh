@@ -18,7 +18,7 @@
 
 # Garantir PATH e HOME completos (hooks Claude rodam em ambiente minimo)
 export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:${PATH:-}"
-export HOME="${HOME:-$(eval echo ~$(whoami))}"
+export HOME="${HOME:-$(eval echo "~$(whoami)")}"
 
 set -uo pipefail
 
