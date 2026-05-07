@@ -1,0 +1,52 @@
+# ═══════════════════════════════════════════════════════════════
+# GITIGNORE NODE — pra projetos backend Node, serverless, MCP servers
+# Inclui o universal + extras de runtime, lambda, etc.
+# ═══════════════════════════════════════════════════════════════
+
+# ─── Inclui universal (copiar conteúdo do gitignore.universal) ─
+
+# ── Node ───────────────────────────────────────────────────────
+node_modules/
+jspm_packages/
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.log
+.yarn/install-state.gz
+
+# ── Build / dist ───────────────────────────────────────────────
+dist/
+build/
+lib/
+out/
+*.tsbuildinfo
+
+# ── Vercel / Netlify / serverless ─────────────────────────────
+.vercel
+.vercel/
+.netlify
+.serverless/
+.aws-sam/
+
+# ── Lambda / runtime cache ─────────────────────────────────────
+.lambda/
+.runtime/
+.functions-cache/
+
+# ── Database local / migrations cache ──────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+.supabase/.temp/
+.supabase/.branches/
+
+# ── Testing ────────────────────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+.jest-cache/
+
+# ── PID / lock ─────────────────────────────────────────────────
+*.pid
+*.seed
+*.pid.lock

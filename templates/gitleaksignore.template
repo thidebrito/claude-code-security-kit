@@ -1,0 +1,25 @@
+# ═══════════════════════════════════════════════════════════════
+# .gitleaksignore TEMPLATE — suprimir falsos positivos do gitleaks
+#
+# COPIAR pra raiz do projeto como .gitleaksignore
+#
+# FORMATO: <commit_full_sha>:<file_path>:<rule_id>:<line_number>
+#
+# Como pegar o fingerprint correto:
+#   gitleaks detect --redact --no-banner --report-format=json --report-path=/tmp/leaks.json
+#   cat /tmp/leaks.json | python3 -c "import json,sys; [print(d['Fingerprint']) for d in json.load(sys.stdin)]"
+#
+# IMPORTANTE: cada linha é UM fingerprint exato. Suprime APENAS aquele leak específico.
+# Se o arquivo mudar de linha, o fingerprint muda — precisa atualizar.
+# ═══════════════════════════════════════════════════════════════
+
+# Exemplo 1: Supabase anon key em frontend (público por design, protegido por RLS)
+# 98e7c25b9376733edbf1dff2fcb59587b1521cef:public/quiz.html:jwt:1394
+
+# Exemplo 2: ID de modelo/produto confundido com chave de API
+# c45a274ba00b1705bde29158498a57585828bc4e:src/integrations/api.ts:generic-api-key:476
+
+# Exemplo 3: Token de exemplo no README (não real)
+# f4db6d495a3a1234567890abcdef1234567890ab:README.md:generic-api-key:29
+
+# ── ADICIONE SEUS FINGERPRINTS ABAIXO ──

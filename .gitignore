@@ -1,0 +1,141 @@
+# ═══════════════════════════════════════════════════════════════
+# GITIGNORE UNIVERSAL — base comum a TODOS os projetos do ecossistema
+# Fonte: ~/PROJETOS/THIDEBRITO-SECURITY/templates/gitignore.universal
+# Versão: 1.0.0 (2026-05-06)
+# ═══════════════════════════════════════════════════════════════
+
+# ── Environment / segredos ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.example.template
+.envrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+.secrets/
+secrets.json
+credentials.json
+service-account*.json
+*-credentials.json
+
+# ── API keys / tokens em ficheiros soltos ──────────────────────
+*api_key*
+*apikey*
+*api-key*
+*.token
+.aws/
+.gcloud/
+.azure/
+
+# ── Sistema operativo ──────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Claude Code (worktrees, sessões locais, cache) ─────────────
+.claude/worktrees/
+.claude/sessions/
+.claude/projects/
+.claude/logs/
+.claude/cache/
+.claude/scratch/
+
+# ── Editores e IDEs ────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.shared.json
+.cursor/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ── Backups / temporários ──────────────────────────────────────
+*.backup
+*.bak
+*.orig
+*.tmp
+*~
+.tmp/
+.temp/
+
+# ── Logs ───────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# ── Reports / outputs locais (regeneráveis) ────────────────────
+reports/
+*.report.json
+*.audit.json
+.security-cache/
+
+# ═══════════════════════════════════════════════════════════════
+# GITIGNORE NODE — pra projetos backend Node, serverless, MCP servers
+# Inclui o universal + extras de runtime, lambda, etc.
+# ═══════════════════════════════════════════════════════════════
+
+# ─── Inclui universal (copiar conteúdo do gitignore.universal) ─
+
+# ── Node ───────────────────────────────────────────────────────
+node_modules/
+jspm_packages/
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.log
+.yarn/install-state.gz
+
+# ── Build / dist ───────────────────────────────────────────────
+dist/
+build/
+lib/
+out/
+*.tsbuildinfo
+
+# ── Vercel / Netlify / serverless ─────────────────────────────
+.vercel
+.vercel/
+.netlify
+.serverless/
+.aws-sam/
+
+# ── Lambda / runtime cache ─────────────────────────────────────
+.lambda/
+.runtime/
+.functions-cache/
+
+# ── Database local / migrations cache ──────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+.supabase/.temp/
+.supabase/.branches/
+
+# ── Testing ────────────────────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+.jest-cache/
+
+# ── PID / lock ─────────────────────────────────────────────────
+*.pid
+*.seed
+*.pid.lock
+
+# ── Linhas custom preservadas do .gitignore original ──
+.cache/
+.next/

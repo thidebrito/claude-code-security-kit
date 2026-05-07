@@ -1,0 +1,62 @@
+# ═══════════════════════════════════════════════════════════════
+# GITIGNORE REACT/VITE — pra projetos React, Next.js, Vite
+# Inclui o universal + extras de build, cache, lint
+# ═══════════════════════════════════════════════════════════════
+
+# ─── Inclui universal (copiar conteúdo do gitignore.universal) ─
+
+# ── Node ───────────────────────────────────────────────────────
+node_modules/
+jspm_packages/
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.log
+.yarn/install-state.gz
+
+# ── Build outputs ──────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.turbo/
+.svelte-kit/
+
+# ── Vite/cache ─────────────────────────────────────────────────
+.vite/
+.cache/
+.parcel-cache/
+.rollup.cache/
+.eslintcache
+.stylelintcache
+
+# ── Vercel / deploy ────────────────────────────────────────────
+.vercel
+.vercel/
+.netlify
+.firebase/
+
+# ── Testing ────────────────────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+.jest-cache/
+
+# ── TypeScript ─────────────────────────────────────────────────
+*.tsbuildinfo
+.tsbuildinfo
+
+# ── Source maps em produção ────────────────────────────────────
+*.map
+
+# ── Watermark + protection outputs (Camada C) ──────────────────
+protection-manifest.json
+.protection/
+.tdb-build/
+
+# ── Storybook ──────────────────────────────────────────────────
+storybook-static/
+.storybook-cache/

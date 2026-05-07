@@ -1,0 +1,16 @@
+{
+  "$schema": "https://yourdomain.com/schemas/security-applied.json",
+  "version": "1.0.0",
+  "applied_at": "REPLACE_ISO_TIMESTAMP",
+  "applied_by": "thidebrito",
+  "level": "B",
+  "templates_used": [
+    "REPLACE_TEMPLATE_NAME"
+  ],
+  "git_hooks_installed": [
+    "pre-commit"
+  ],
+  "audit_report": "REPLACE_PATH_TO_REPORT_OR_NULL",
+  "security_repo_version": "1.0.0",
+  "notes": ""
+}

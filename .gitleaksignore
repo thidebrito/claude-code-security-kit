@@ -1,0 +1,4 @@
+# Falsos positivos do próprio repo
+# (exemplos de hash em documentação são confundidos com generic-api-key)
+
+docs/PROTECT-BUILD.md:generic-api-key:57

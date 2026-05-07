@@ -1,0 +1,40 @@
+# ═══════════════════════════════════════════════════════════════
+# GITIGNORE WEB — pra LPs HTML/CSS/JS puras (sem framework)
+# Inclui o universal + extras de build/deploy estático
+# ═══════════════════════════════════════════════════════════════
+
+# ─── Inclui universal (copiar conteúdo do gitignore.universal) ─
+# (rodar apply-template.sh que faz merge)
+
+# ── Build outputs (mesmo HTML puro pode ter build step) ────────
+dist/
+build/
+public/build/
+out/
+.parcel-cache/
+
+# ── Vercel ─────────────────────────────────────────────────────
+.vercel
+.vercel/
+.netlify
+
+# ── Source maps em produção (não commitar) ────────────────────
+*.map
+*.min.js.map
+*.min.css.map
+
+# ── Imagens otimizadas geradas (mantém originais) ──────────────
+*.optimized.jpg
+*.optimized.png
+*.optimized.webp
+.image-cache/
+
+# ── Cache de processamento ─────────────────────────────────────
+.cache/
+.sass-cache/
+.postcss-cache/
+
+# ── Watermark + protection outputs (Camada C) ──────────────────
+protection-manifest.json
+.protection/
+.tdb-build/

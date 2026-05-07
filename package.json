@@ -1,0 +1,19 @@
+{
+  "name": "thidebrito-security",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema central de segurança e proteção do ecossistema digital do Your Name",
+  "type": "module",
+  "scripts": {
+    "audit": "bash scripts/audit-projects.sh",
+    "protect": "node scripts/protect-build.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "opentimestamps": "^0.4.9"
+  },
+  "license": "UNLICENSED",
+  "author": "Your Name <you@example.com>"
+}

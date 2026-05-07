@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# ═══════════════════════════════════════════════════════════════
+# PRE-COMMIT HOOK — bloqueia commit se detectar segredos ou PII
+# Instalado em .git/hooks/pre-commit por apply-template.sh
+# Bypass de emergência: SKIP_HOOKS=1 git commit -m "..."
+# ═══════════════════════════════════════════════════════════════
+
+set -euo pipefail
+
+if [ "${SKIP_HOOKS:-0}" = "1" ]; then
+  echo "⚠️  pre-commit BYPASS ativo (SKIP_HOOKS=1) — segredos podem passar!"
+  exit 0
+fi
+
+# Resolver caminho do repo SECURITY (fonte canônica)
+SECURITY_REPO="${THIDEBRITO_SECURITY:-$HOME/PROJETOS/THIDEBRITO-SECURITY}"
+
+if [ ! -d "$SECURITY_REPO" ]; then
+  echo "⚠️  THIDEBRITO-SECURITY não encontrado em $SECURITY_REPO"
+  echo "    Pulando hook (não bloqueia commit, mas não protege)."
+  exit 0
+fi
+
+# ── 1. Secret scan via gitleaks ─────────────────────────────
+if command -v gitleaks >/dev/null 2>&1; then
+  echo "🔐 [pre-commit] Rodando gitleaks no diff staged..."
+  if ! gitleaks protect --staged --redact --no-banner; then
+    echo ""
+    echo "❌ gitleaks detectou possíveis segredos no diff staged."
+    echo "   Revise os arquivos acima ANTES de commitar."
+    echo "   Bypass de emergência: SKIP_HOOKS=1 git commit ..."
+    exit 1
+  fi
+else
+  echo "⚠️  gitleaks não instalado — pulando secret scan (instale: brew install gitleaks)"
+fi
+
+# ── 2. PII scan ─────────────────────────────────────────────
+if [ -x "$SECURITY_REPO/scripts/pii-scan.sh" ]; then
+  echo "🔐 [pre-commit] Rodando pii-scan..."
+  if ! bash "$SECURITY_REPO/scripts/pii-scan.sh" --staged; then
+    echo ""
+    echo "❌ pii-scan detectou possível PII no diff staged."
+    echo "   Bypass de emergência: SKIP_HOOKS=1 git commit ..."
+    exit 1
+  fi
+fi
+
+echo "✅ pre-commit OK — sem segredos nem PII detectados"
+exit 0
